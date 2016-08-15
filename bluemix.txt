@@ -1,0 +1,3 @@
+http://www.ibm.com/cloud-computing/bluemix/
+The login is: danielpbloch@gmail.com
+Password: Jacky1010
