@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    background: #fff;
+    font-size: 13px;
+    font-family: font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+body .homepage {
+    background: url(../img/bg.png);
+    background-size: cover
+}
+.clear {
+    clear: both
+}
+#benframe {
+    background: #FFFFFF;
+    width: 90%;
+    margin: 2.5% auto;
+    border: 1px solid #F4F4F4;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    padding: 0px;
+}
+#benframe .navbar-default {
+    background: #FFFFFF;
+    box-shadow: none;
+    border: none
+}
+#benframe .navbar a {
+    color: #549147
+}
+#benframe .navbar-nav {
+    font-size: 16px
+}
+#benframe .navbar-brand-logo {
+    margin: 10px;
+}
+#benframe .navbar-brand-text {
+    display: none
+}
+#homeHolder {
+    background: #b4ec51;
+    /* Old browsers */
+    
+    background: -moz-linear-gradient(top, #b4ec51 0%, #429321 100%);
+    /* FF3.6-15 */
+    
+    background: -webkit-linear-gradient(top, #b4ec51 0%, #429321 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    
+    background: linear-gradient(to bottom, #b4ec51 0%, #429321 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#b4ec51', endColorstr='#429321', GradientType=0);
+    /* IE6-9 */
+}
+#homeBanners {
+    height: 300px;
+}
+#loginForm {
+    border-top: 1px solid #fff;
+    margin: 0px 20px;
+    height: 200px;
+}
+#loginForm .formHolder {
+    margin: 20px auto;
+    width: 30%;
+}
+#loginForm h3 {
+    color: #006E9F
+}
+#loginForm a {
+    color: #fff;
+}
+.carousel-caption {
+    font-size: 16px
+}
+footer {
+    background: #006E9F;
+    padding: 15px;
+    color: #fff;
+    font-size: 12px;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+.appMain {} .appMain .navbar-default {
+    border-radius: none;
+    margin: 0px;
+    background: #1196CA;
+    /* Old browsers */
+    
+    background: -moz-linear-gradient(top, #1196CA 0%, #56BDCB 100%);
+    /* FF3.6-15 */
+    
+    background: -webkit-linear-gradient(top, #1196CA 0%, #56BDCB 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    
+    background: linear-gradient(to bottom, #1196CA 0%, #56BDCB 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#b4ec51', endColorstr='#56BDCB', GradientType=0);
+    /* IE6-9 */
+}
+.appMain .navbar-default .navbar-nav>li>a {
+    color: #fff
+}
+.appMain .navbar-brand-logo {
+    margin: 10px;
+    width: 50%
+}
+.appMain .navbar-brand-text {
+    display: none
+}
+.appMain .navbar-nav {
+    font-size: 18px;
+    padding-top: 10px;
+}
+.appMain .btn-default {
+    background: #D6D6D6;
+    border: 1px solid #D4D4D4;
+    color: #fff;
+    text-shadow: none
+}
+.appMain .btn-default:hover {
+    background: #1196CA;
+    /* Old browsers */
+    
+    background: -moz-linear-gradient(top, #D6D6D6 0%, #666666 100%);
+    /* FF3.6-15 */
+    
+    background: -webkit-linear-gradient(top, #D6D6D6 0%, #66666 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    
+    background: linear-gradient(to bottom, #D6D6D6 0%, #666666 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#D6D6D6', endColorstr='#666666', GradientType=0);
+    /* IE6-9 */
+}
+.appMain .btn-primary {
+    background: #56BDCB;
+    border: 1px solid #D4D4D4;
+    color: #fff;
+    text-shadow: none
+}
+.appMain .btn-primary:hover {
+    background: #1196CA;
+    /* Old browsers */
+    
+    background: -moz-linear-gradient(top, #56BDCB #1196CA 0%, #1196CA 100%);
+    /* FF3.6-15 */
+    
+    background: -webkit-linear-gradient(top, #56BDCB 0%, #1196CA 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    
+    background: linear-gradient(to bottom, #56BDCB 0%, #1196CA 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='# 56BDCB', endColorstr='#b4ec51', GradientType=0);
+    /* IE6-9 */
+}
+h2.benbenTitle {
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 10px;
+    color: #56BDCB
+}
+.modal-title,
+h2,
+h3,
+h4,
+h5,
+h1 {
+    color: #56BDCB
+}
+.panel {
+    border-radius: 0px
+}
+.panel-default .panel-heading {
+    background: #FAFAFA;
+}
+.panel-default .panel-title {
+    font-size: 16px;
+    font-weight: lighter
+}
+/* Confirm Information */
+
+.confirmInfo {
+    margin: 10px;
+    padding: 20px;
+    border-top: 1px solid #EFEFEF
+}
+.confirmInfo h5 {
+    font-size: 14px;
+    color: #56BDCB;
+    font-weight: normal
+}
+.confirmInfo .footer {
+    border-top: 1px solid #EFEFEF;
+    padding: 20px 0px 0px 0px;
+    margin: 0px;
+    clear: both;
+    text-align: right
+}
+.lrborder {
+    border-left: 1px solid #EFEFEF;
+    border-right: 1px solid #EFEFEF;
+    min-height: 350px;
+}
+/* Dashbaord*/
+
+#benbenNav {} #benbenNav .navbar {
+    margin-bottom: 10px
+}
+#benbenNav .nav>li>a {
+    padding: 10px 20px;
+    color: #1196CA;
+    font-weight: lighter
+}
+.welcomeInfo {
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 10px 30px;
+}
+.alert-default {
+    background-color: #FAFAFA
+}
+/* Search*/
+
+.serachBox {
+    -webkit-box-shadow: 5px 1px 10px 1px #666;
+    box-shadow: 5px 1px 10px 1px #666;
+    z-index: 1000;
+    height: 500px;
+    margin-left: 10px;
+    padding: 0px;
+}
+.serachBox form {
+    margin: 20px;
+}
+.searchTitle {
+    display: block;
+    padding: 10px 20px;
+    background: #FAFAFA;
+    font-size: 16px;
+    font-weight: lighter
+}
+.searchMap {
+    margin-left: -10px;
+    z-index: 0;
+    height: 500px;
+}
+#mapHolder {
+    width: 100%;
+    height: 100%
+}
+#mapHolder object {
+    width: 100%;
+    height: 500px
+}
+#mapTabs {
+    background: #61CEFF
+}
+#propOverview {
+    margin-top: 10px;
+}
+.galleria {
+    width: 100%;
+    height: 400px;
+}
+.galleria-theme-classic {
+    background: #fff !important
+}
+/* Map*/
+
+.info {
+    padding: 6px 8px;
+    text-transform: capitalize !important;
+    background: white;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+}
+.legend {
+    text-align: left;
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.5;
+}
+.leaflet-clickable {
+    cursor: default
+}

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)file:///Volumes/Macintosh%20HDD/Users/NiiNortey/Documents/projects/benben/user/map/map2.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>East Legon - Site Control</title>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<script type="text/javascript" src="./map1_files/75e43aeb44"></script><script src="./map1_files/nr-943.min.js"></script><script async="" src="./map1_files/fbds.js"></script><script type="text/javascript" src="./map1_files/75e43aeb44(1)"></script><script type="text/javascript" async="" src="./map1_files/iumjbczf"></script><script src="./map1_files/nr-943.min(1).js"></script><script async="" src="./map1_files/fbds(1).js"></script><script async="" src="./map1_files/analytics.js"></script><script type="text/javascript">window.NREUM || (NREUM = {});
+            NREUM.info = {"beacon": "bam.nr-data.net", "errorBeacon": "bam.nr-data.net", "licenseKey": "75e43aeb44", "applicationID": "7309652", "transactionName": "c1xdRkFcWFxSRBYGF19GQ0EcQFxfQA==", "queueTime": 0, "applicationTime": 577, "agent": ""}</script>
+<script type="text/javascript">(window.NREUM || (NREUM = {})).loader_config = {xpid: "VgAOWFJXGwQDVFhUAgM="};
+            window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) {
+                function r(n) {
+                    if (!e[n]) {
+                        var o = e[n] = {exports: {}};
+                        t[n][0].call(o.exports, function (e) {
+                            var o = t[n][1][e];
+                            return r(o || e)
+                        }, o, o.exports)
+                    }
+                    return e[n].exports
+                }
+                if ("function" == typeof __nr_require)
+                    return __nr_require;
+                for (var o = 0; o < n.length; o++)
+                    r(n[o]);
+                return r
+            }({1: [function (t, e, n) {
+                        function r(t) {
+                            try {
+                                s.console && console.log(t)
+                            } catch (e) {
+                            }
+                        }
+                        var o, i = t("ee"), a = t(14), s = {};
+                        try {
+                            o = localStorage.getItem("__nr_flags").split(","), console && "function" == typeof console.log && (s.console = !0, -1 !== o.indexOf("dev") && (s.dev = !0), -1 !== o.indexOf("nr_dev") && (s.nrDev = !0))
+                        } catch (c) {
+                        }
+                        s.nrDev && i.on("internal-error", function (t) {
+                            r(t.stack)
+                        }), s.dev && i.on("fn-err", function (t, e, n) {
+                            r(n.stack)
+                        }), s.dev && (r("NR AGENT IN DEVELOPMENT MODE"), r("flags: " + a(s, function (t, e) {
+                            return t
+                        }).join(", ")))
+                    }, {}], 2: [function (t, e, n) {
+                        function r(t, e, n, r, o) {
+                            try {
+                                d ? d -= 1 : i("err", [o || new UncaughtException(t, e, n)])
+                            } catch (s) {
+                                try {
+                                    i("ierr", [s, (new Date).getTime(), !0])
+                                } catch (c) {
+                                }
+                            }
+                            return"function" == typeof f ? f.apply(this, a(arguments)) : !1
+                        }
+                        function UncaughtException(t, e, n) {
+                            this.message = t || "Uncaught error with no additional information", this.sourceURL = e, this.line = n
+                        }
+                        function o(t) {
+                            i("err", [t, (new Date).getTime()])
+                        }
+                        var i = t("handle"), a = t(15), s = t("ee"), c = t("loader"), f = window.onerror, u = !1, d = 0;
+                        c.features.err = !0, t(1), window.onerror = r;
+                        try {
+                            throw new Error
+                        } catch (l) {
+                            "stack"in l && (t(8), t(7), "addEventListener"in window && t(5), c.xhrWrappable && t(9), u = !0)
+                        }
+                        s.on("fn-start", function (t, e, n) {
+                            u && (d += 1)
+                        }), s.on("fn-err", function (t, e, n) {
+                            u && (this.thrown = !0, o(n))
+                        }), s.on("fn-end", function () {
+                            u && !this.thrown && d > 0 && (d -= 1)
+                        }), s.on("internal-error", function (t) {
+                            i("ierr", [t, (new Date).getTime(), !0])
+                        })
+                    }, {}], 3: [function (t, e, n) {
+                        t("loader").features.ins = !0
+                    }, {}], 4: [function (t, e, n) {
+                        function r(t) {
+                        }
+                        if (window.performance && window.performance.timing && window.performance.getEntriesByType) {
+                            var o = t("ee"), i = t("handle"), a = t(8), s = t(7);
+                            t("loader").features.stn = !0, t(6);
+                            var c = NREUM.o.EV;
+                            o.on("fn-start", function (t, e) {
+                                var n = t[0];
+                                n instanceof c && (this.bstStart = Date.now())
+                            }), o.on("fn-end", function (t, e) {
+                                var n = t[0];
+                                n instanceof c && i("bst", [n, e, this.bstStart, Date.now()])
+                            }), a.on("fn-start", function (t, e, n) {
+                                this.bstStart = Date.now(), this.bstType = n
+                            }), a.on("fn-end", function (t, e) {
+                                i("bstTimer", [e, this.bstStart, Date.now(), this.bstType])
+                            }), s.on("fn-start", function () {
+                                this.bstStart = Date.now()
+                            }), s.on("fn-end", function (t, e) {
+                                i("bstTimer", [e, this.bstStart, Date.now(), "requestAnimationFrame"])
+                            }), o.on("pushState-start", function (t) {
+                                this.time = Date.now(), this.startPath = location.pathname + location.hash
+                            }), o.on("pushState-end", function (t) {
+                                i("bstHist", [location.pathname + location.hash, this.startPath, this.time])
+                            }), "addEventListener"in window.performance && (window.performance.clearResourceTimings ? window.performance.addEventListener("resourcetimingbufferfull", function (t) {
+                                i("bstResource", [window.performance.getEntriesByType("resource")]), window.performance.clearResourceTimings()
+                            }, !1) : window.performance.addEventListener("webkitresourcetimingbufferfull", function (t) {
+                                i("bstResource", [window.performance.getEntriesByType("resource")]), window.performance.webkitClearResourceTimings()
+                            }, !1)), document.addEventListener("scroll", r, !1), document.addEventListener("keypress", r, !1), document.addEventListener("click", r, !1)
+                        }
+                    }, {}], 5: [function (t, e, n) {
+                        function r(t) {
+                            for (var e = t; e && !e.hasOwnProperty(u); )
+                                e = Object.getPrototypeOf(e);
+                            e && o(e)
+                        }
+                        function o(t) {
+                            s.inPlace(t, [u, d], "-", i)
+                        }
+                        function i(t, e) {
+                            return t[1]
+                        }
+                        var a = t("ee").get("events"), s = t(16)(a), c = t("gos"), f = XMLHttpRequest, u = "addEventListener", d = "removeEventListener";
+                        e.exports = a, "getPrototypeOf"in Object ? (r(document), r(window), r(f.prototype)) : f.prototype.hasOwnProperty(u) && (o(window), o(f.prototype)), a.on(u + "-start", function (t, e) {
+                            if (t[1]) {
+                                var n = t[1];
+                                if ("function" == typeof n) {
+                                    var r = c(n, "nr@wrapped", function () {
+                                        return s(n, "fn-", null, n.name || "anonymous")
+                                    });
+                                    this.wrapped = t[1] = r
+                                } else
+                                    "function" == typeof n.handleEvent && s.inPlace(n, ["handleEvent"], "fn-")
+                            }
+                        }), a.on(d + "-start", function (t) {
+                            var e = this.wrapped;
+                            e && (t[1] = e)
+                        })
+                    }, {}], 6: [function (t, e, n) {
+                        var r = t("ee").get("history"), o = t(16)(r);
+                        e.exports = r, o.inPlace(window.history, ["pushState", "replaceState"], "-")
+                    }, {}], 7: [function (t, e, n) {
+                        var r = t("ee").get("raf"), o = t(16)(r);
+                        e.exports = r, o.inPlace(window, ["requestAnimationFrame", "mozRequestAnimationFrame", "webkitRequestAnimationFrame", "msRequestAnimationFrame"], "raf-"), r.on("raf-start", function (t) {
+                            t[0] = o(t[0], "fn-")
+                        })
+                    }, {}], 8: [function (t, e, n) {
+                        function r(t, e, n) {
+                            t[0] = a(t[0], "fn-", null, n)
+                        }
+                        function o(t, e, n) {
+                            this.method = n, this.timerDuration = "number" == typeof t[1] ? t[1] : 0, t[0] = a(t[0], "fn-", this, n)
+                        }
+                        var i = t("ee").get("timer"), a = t(16)(i);
+                        e.exports = i, a.inPlace(window, ["setTimeout", "setImmediate"], "setTimer-"), a.inPlace(window, ["setInterval"], "setInterval-"), a.inPlace(window, ["clearTimeout", "clearImmediate"], "clearTimeout-"), i.on("setInterval-start", r), i.on("setTimer-start", o)
+                    }, {}], 9: [function (t, e, n) {
+                        function r(t, e) {
+                            d.inPlace(e, ["onreadystatechange"], "fn-", s)
+                        }
+                        function o() {
+                            var t = this, e = u.context(t);
+                            t.readyState > 3 && !e.resolved && (e.resolved = !0, u.emit("xhr-resolved", [], t)), d.inPlace(t, v, "fn-", s)
+                        }
+                        function i(t) {
+                            w.push(t), h && (g = -g, b.data = g)
+                        }
+                        function a() {
+                            for (var t = 0; t < w.length; t++)
+                                r([], w[t]);
+                            w.length && (w = [])
+                        }
+                        function s(t, e) {
+                            return e
+                        }
+                        function c(t, e) {
+                            for (var n in t)
+                                e[n] = t[n];
+                            return e
+                        }
+                        t(5);
+                        var f = t("ee"), u = f.get("xhr"), d = t(16)(u), l = NREUM.o, p = l.XHR, h = l.MO, m = "readystatechange", v = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"], w = [];
+                        e.exports = u;
+                        var y = window.XMLHttpRequest = function (t) {
+                            var e = new p(t);
+                            try {
+                                u.emit("new-xhr", [e], e), e.addEventListener(m, o, !1)
+                            } catch (n) {
+                                try {
+                                    u.emit("internal-error", [n])
+                                } catch (r) {
+                                }
+                            }
+                            return e
+                        };
+                        if (c(p, y), y.prototype = p.prototype, d.inPlace(y.prototype, ["open", "send"], "-xhr-", s), u.on("send-xhr-start", function (t, e) {
+                            r(t, e), i(e)
+                        }), u.on("open-xhr-start", r), h) {
+                            var g = 1, b = document.createTextNode(g);
+                            new h(a).observe(b, {characterData: !0})
+                        } else
+                            f.on("fn-end", function (t) {
+                                t[0] && t[0].type === m || a()
+                            })
+                    }, {}], 10: [function (t, e, n) {
+                        function r(t) {
+                            var e = this.params, n = this.metrics;
+                            if (!this.ended) {
+                                this.ended = !0;
+                                for (var r = 0; l > r; r++)
+                                    t.removeEventListener(d[r], this.listener, !1);
+                                if (!e.aborted) {
+                                    if (n.duration = (new Date).getTime() - this.startTime, 4 === t.readyState) {
+                                        e.status = t.status;
+                                        var i = o(t, this.lastSize);
+                                        if (i && (n.rxSize = i), this.sameOrigin) {
+                                            var a = t.getResponseHeader("X-NewRelic-App-Data");
+                                            a && (e.cat = a.split(", ").pop())
+                                        }
+                                    } else
+                                        e.status = 0;
+                                    n.cbTime = this.cbTime, u.emit("xhr-done", [t], t), c("xhr", [e, n, this.startTime])
+                                }
+                            }
+                        }
+                        function o(t, e) {
+                            var n = t.responseType;
+                            if ("json" === n && null !== e)
+                                return e;
+                            var r = "arraybuffer" === n || "blob" === n || "json" === n ? t.response : t.responseText;
+                            return i(r)
+                        }
+                        function i(t) {
+                            if ("string" == typeof t && t.length)
+                                return t.length;
+                            if ("object" == typeof t) {
+                                if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t.byteLength)
+                                    return t.byteLength;
+                                if ("undefined" != typeof Blob && t instanceof Blob && t.size)
+                                    return t.size;
+                                if (!("undefined" != typeof FormData && t instanceof FormData))
+                                    try {
+                                        return JSON.stringify(t).length
+                                    } catch (e) {
+                                        return
+                                    }
+                            }
+                        }
+                        function a(t, e) {
+                            var n = f(e), r = t.params;
+                            r.host = n.hostname + ":" + n.port, r.pathname = n.pathname, t.sameOrigin = n.sameOrigin
+                        }
+                        var s = t("loader");
+                        if (s.xhrWrappable) {
+                            var c = t("handle"), f = t(11), u = t("ee"), d = ["load", "error", "abort", "timeout"], l = d.length, p = t("id"), h = t(13), m = window.XMLHttpRequest;
+                            s.features.xhr = !0, t(9), u.on("new-xhr", function (t) {
+                                var e = this;
+                                e.totalCbs = 0, e.called = 0, e.cbTime = 0, e.end = r, e.ended = !1, e.xhrGuids = {}, e.lastSize = null, h && (h > 34 || 10 > h) || window.opera || t.addEventListener("progress", function (t) {
+                                    e.lastSize = t.loaded
+                                }, !1)
+                            }), u.on("open-xhr-start", function (t) {
+                                this.params = {method: t[0]}, a(this, t[1]), this.metrics = {}
+                            }), u.on("open-xhr-end", function (t, e) {
+                                "loader_config"in NREUM && "xpid"in NREUM.loader_config && this.sameOrigin && e.setRequestHeader("X-NewRelic-ID", NREUM.loader_config.xpid)
+                            }), u.on("send-xhr-start", function (t, e) {
+                                var n = this.metrics, r = t[0], o = this;
+                                if (n && r) {
+                                    var a = i(r);
+                                    a && (n.txSize = a)
+                                }
+                                this.startTime = (new Date).getTime(), this.listener = function (t) {
+                                    try {
+                                        "abort" === t.type && (o.params.aborted = !0), ("load" !== t.type || o.called === o.totalCbs && (o.onloadCalled || "function" != typeof e.onload)) && o.end(e)
+                                    } catch (n) {
+                                        try {
+                                            u.emit("internal-error", [n])
+                                        } catch (r) {
+                                        }
+                                    }
+                                };
+                                for (var s = 0; l > s; s++)
+                                    e.addEventListener(d[s], this.listener, !1)
+                            }), u.on("xhr-cb-time", function (t, e, n) {
+                                this.cbTime += t, e ? this.onloadCalled = !0 : this.called += 1, this.called !== this.totalCbs || !this.onloadCalled && "function" == typeof n.onload || this.end(n)
+                            }), u.on("xhr-load-added", function (t, e) {
+                                var n = "" + p(t) + !!e;
+                                this.xhrGuids && !this.xhrGuids[n] && (this.xhrGuids[n] = !0, this.totalCbs += 1)
+                            }), u.on("xhr-load-removed", function (t, e) {
+                                var n = "" + p(t) + !!e;
+                                this.xhrGuids && this.xhrGuids[n] && (delete this.xhrGuids[n], this.totalCbs -= 1)
+                            }), u.on("addEventListener-end", function (t, e) {
+                                e instanceof m && "load" === t[0] && u.emit("xhr-load-added", [t[1], t[2]], e)
+                            }), u.on("removeEventListener-end", function (t, e) {
+                                e instanceof m && "load" === t[0] && u.emit("xhr-load-removed", [t[1], t[2]], e)
+                            }), u.on("fn-start", function (t, e, n) {
+                                e instanceof m && ("onload" === n && (this.onload = !0), ("load" === (t[0] && t[0].type) || this.onload) && (this.xhrCbStart = (new Date).getTime()))
+                            }), u.on("fn-end", function (t, e) {
+                                this.xhrCbStart && u.emit("xhr-cb-time", [(new Date).getTime() - this.xhrCbStart, this.onload, e], e)
+                            })
+                        }
+                    }, {}], 11: [function (t, e, n) {
+                        e.exports = function (t) {
+                            var e = document.createElement("a"), n = window.location, r = {};
+                            e.href = t, r.port = e.port;
+                            var o = e.href.split("://");
+                            !r.port && o[1] && (r.port = o[1].split("/")[0].split("@").pop().split(":")[1]), r.port && "0" !== r.port || (r.port = "https" === o[0] ? "443" : "80"), r.hostname = e.hostname || n.hostname, r.pathname = e.pathname, r.protocol = o[0], "/" !== r.pathname.charAt(0) && (r.pathname = "/" + r.pathname);
+                            var i = !e.protocol || ":" === e.protocol || e.protocol === n.protocol, a = e.hostname === document.domain && e.port === n.port;
+                            return r.sameOrigin = i && (!e.hostname || a), r
+                        }
+                    }, {}], 12: [function (t, e, n) {
+                        function r(t, e) {
+                            return function () {
+                                o(t, [(new Date).getTime()].concat(a(arguments)), null, e)
+                            }
+                        }
+                        var o = t("handle"), i = t(14), a = t(15);
+                        "undefined" == typeof window.newrelic && (newrelic = NREUM);
+                        var s = ["setPageViewName", "setCustomAttribute", "finished", "addToTrace", "inlineHit"], c = ["addPageAction"], f = "api-";
+                        i(s, function (t, e) {
+                            newrelic[e] = r(f + e, "api")
+                        }), i(c, function (t, e) {
+                            newrelic[e] = r(f + e)
+                        }), e.exports = newrelic, newrelic.noticeError = function (t) {
+                            "string" == typeof t && (t = new Error(t)), o("err", [t, (new Date).getTime()])
+                        }
+                    }, {}], 13: [function (t, e, n) {
+                        var r = 0, o = navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);
+                        o && (r = +o[1]), e.exports = r
+                    }, {}], 14: [function (t, e, n) {
+                        function r(t, e) {
+                            var n = [], r = "", i = 0;
+                            for (r in t)
+                                o.call(t, r) && (n[i] = e(r, t[r]), i += 1);
+                            return n
+                        }
+                        var o = Object.prototype.hasOwnProperty;
+                        e.exports = r
+                    }, {}], 15: [function (t, e, n) {
+                        function r(t, e, n) {
+                            e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0);
+                            for (var r = -1, o = n - e || 0, i = Array(0 > o ? 0 : o); ++r < o; )
+                                i[r] = t[e + r];
+                            return i
+                        }
+                        e.exports = r
+                    }, {}], 16: [function (t, e, n) {
+                        function r(t) {
+                            return!(t && "function" == typeof t && t.apply && !t[a])
+                        }
+                        var o = t("ee"), i = t(15), a = "nr@original", s = Object.prototype.hasOwnProperty, c = !1;
+                        e.exports = function (t) {
+                            function e(t, e, n, o) {
+                                function nrWrapper() {
+                                    var r, a, s, c;
+                                    try {
+                                        a = this, r = i(arguments), s = "function" == typeof n ? n(r, a) : n || {}
+                                    } catch (u) {
+                                        d([u, "", [r, a, o], s])
+                                    }
+                                    f(e + "start", [r, a, o], s);
+                                    try {
+                                        return c = t.apply(a, r)
+                                    } catch (l) {
+                                        throw f(e + "err", [r, a, l], s), l
+                                    } finally {
+                                        f(e + "end", [r, a, c], s)
+                                    }
+                                }
+                                return r(t) ? t : (e || (e = ""), nrWrapper[a] = t, u(t, nrWrapper), nrWrapper)
+                            }
+                            function n(t, n, o, i) {
+                                o || (o = "");
+                                var a, s, c, f = "-" === o.charAt(0);
+                                for (c = 0; c < n.length; c++)
+                                    s = n[c], a = t[s], r(a) || (t[s] = e(a, f ? s + o : o, i, s))
+                            }
+                            function f(e, n, r) {
+                                if (!c) {
+                                    c = !0;
+                                    try {
+                                        t.emit(e, n, r)
+                                    } catch (o) {
+                                        d([o, e, n, r])
+                                    }
+                                    c = !1
+                                }
+                            }
+                            function u(t, e) {
+                                if (Object.defineProperty && Object.keys)
+                                    try {
+                                        var n = Object.keys(t);
+                                        return n.forEach(function (n) {
+                                            Object.defineProperty(e, n, {get: function () {
+                                                    return t[n]
+                                                }, set: function (e) {
+                                                    return t[n] = e, e
+                                                }})
+                                        }), e
+                                    } catch (r) {
+                                        d([r])
+                                    }
+                                for (var o in t)
+                                    s.call(t, o) && (e[o] = t[o]);
+                                return e
+                            }
+                            function d(e) {
+                                try {
+                                    t.emit("internal-error", e)
+                                } catch (n) {
+                                }
+                            }
+                            return t || (t = o), e.inPlace = n, e.flag = a, e
+                        }
+                    }, {}], ee: [function (t, e, n) {
+                        function r() {
+                        }
+                        function o(t) {
+                            function e(t) {
+                                return t && t instanceof r ? t : t ? s(t, a, i) : i()
+                            }
+                            function n(n, r, o) {
+                                t && t(n, r, o);
+                                for (var i = e(o), a = l(n), s = a.length, c = 0; s > c; c++)
+                                    a[c].apply(i, r);
+                                var u = f[v[n]];
+                                return u && u.push([w, n, r, i]), i
+                            }
+                            function d(t, e) {
+                                m[t] = l(t).concat(e)
+                            }
+                            function l(t) {
+                                return m[t] || []
+                            }
+                            function p(t) {
+                                return u[t] = u[t] || o(n)
+                            }
+                            function h(t, e) {
+                                c(t, function (t, n) {
+                                    e = e || "feature", v[n] = e, e in f || (f[e] = [])
+                                })
+                            }
+                            var m = {}, v = {}, w = {on: d, emit: n, get: p, listeners: l, context: e, buffer: h};
+                            return w
+                        }
+                        function i() {
+                            return new r
+                        }
+                        var a = "nr@context", s = t("gos"), c = t(14), f = {}, u = {}, d = e.exports = o();
+                        d.backlog = f
+                    }, {}], gos: [function (t, e, n) {
+                        function r(t, e, n) {
+                            if (o.call(t, e))
+                                return t[e];
+                            var r = n();
+                            if (Object.defineProperty && Object.keys)
+                                try {
+                                    return Object.defineProperty(t, e, {value: r, writable: !0, enumerable: !1}), r
+                                } catch (i) {
+                                }
+                            return t[e] = r, r
+                        }
+                        var o = Object.prototype.hasOwnProperty;
+                        e.exports = r
+                    }, {}], handle: [function (t, e, n) {
+                        function r(t, e, n, r) {
+                            o.buffer([t], r), o.emit(t, e, n)
+                        }
+                        var o = t("ee").get("handle");
+                        e.exports = r, r.ee = o
+                    }, {}], id: [function (t, e, n) {
+                        function r(t) {
+                            var e = typeof t;
+                            return!t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, i, function () {
+                                return o++
+                            })
+                        }
+                        var o = 1, i = "nr@id", a = t("gos");
+                        e.exports = r
+                    }, {}], loader: [function (t, e, n) {
+                        function r() {
+                            if (!m++) {
+                                var t = h.info = NREUM.info, e = u.getElementsByTagName("script")[0];
+                                if (t && t.licenseKey && t.applicationID && e) {
+                                    c(l, function (e, n) {
+                                        t[e] || (t[e] = n)
+                                    });
+                                    var n = "https" === d.split(":")[0] || t.sslForHttp;
+                                    h.proto = n ? "https://" : "http://", s("mark", ["onload", a()], null, "api");
+                                    var r = u.createElement("script");
+                                    r.src = h.proto + t.agent, e.parentNode.insertBefore(r, e)
+                                }
+                            }
+                        }
+                        function o() {
+                            "complete" === u.readyState && i()
+                        }
+                        function i() {
+                            s("mark", ["domContent", a()], null, "api")
+                        }
+                        function a() {
+                            return(new Date).getTime()
+                        }
+                        var s = t("handle"), c = t(14), f = window, u = f.document;
+                        NREUM.o = {ST: setTimeout, CT: clearTimeout, XHR: f.XMLHttpRequest, REQ: f.Request, EV: f.Event, PR: f.Promise, MO: f.MutationObserver}, t(12);
+                        var d = "" + location, l = {beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-943.min.js"}, p = window.XMLHttpRequest && XMLHttpRequest.prototype && XMLHttpRequest.prototype.addEventListener && !/CriOS/.test(navigator.userAgent), h = e.exports = {offset: a(), origin: d, features: {}, xhrWrappable: p};
+                        u.addEventListener ? (u.addEventListener("DOMContentLoaded", i, !1), f.addEventListener("load", r, !1)) : (u.attachEvent("onreadystatechange", o), f.attachEvent("onload", r)), s("mark", ["firstbyte", a()], null, "api");
+                        var m = 0
+                    }, {}]}, {}, ["loader", 2, 10, 4, 3]);</script>
+<meta http-equiv="x-pjax-version">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<link href="https://makeloveland.com/blog.rss" rel="alternate" title="RSS" type="application/rss+xml">
+<meta content="Bitsoko Ghana: Site Control" name="title">
+<meta content="parcels properties detroit city tax foreclosure advocates blight surveys vacancy blexting blext real land use estate mobile motor city mapping open data database" name="keywords">
+<meta content="LOVELAND is dedicated to putting America online parcel by parcel. We work with governments, developers, neighborhood groups, and passionate individuals to gather and present information about property in clear, actionable ways. In Detroit our community missions include arming people with information to battle a plague of tax foreclosures and running an ongoing survey of property conditions to help fight blight." name="description">
+<meta content="2901636,620415163" property="fb:admins">
+<meta content="East Legon Use" property="og:title">
+<meta content="https://bitsoko-ghana.sitecontrol.us/m/east-legon-use" property="og:url">
+<meta content="Site Control" property="og:site_name">
+<meta content="website" property="og:type">
+<meta content="Ghana&#39;s Leading Parcel Mapping Service" property="og:description">
+<meta content="https://bitsoko-ghana.sitecontrol.us/assets/illustration/header.jpg" property="og:image">
+<meta content="@makeloveland" property="twitter:creator">
+<meta content="https://bitsoko-ghana.sitecontrol.us/m/east-legon-use" property="twitter:url">
+<meta content="Ghana&#39;s Leading Parcel Mapping Service" property="twitter:description">
+<meta content="https://bitsoko-ghana.sitecontrol.us/assets/illustration/header.jpg" property="twitter:image">
+<meta property="map.name">
+<meta property="map.slug">
+<meta property="map.auction">
+<meta content="Bitsoko Ghana" property="group.name">
+<meta content="bitsoko-ghana" property="group.slug">
+<meta content="/sitecontrol/group" property="path">
+<link rel="apple-touch-icon" sizes="57x57" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/manifest.json">
+<link rel="shortcut icon" href="https://bitsoko-ghana.sitecontrol.us/assets/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta content="authenticity_token" name="csrf-param">
+<meta content="O1ayCYxWF7a1g+c6xaH4eTl792vXjtcjk5KsEy46RKk=" name="csrf-token">
+<script>
+            var data = {"signed_in": true, "admin": false, "current_user_id": 8631, "username": "Bitsoko Ghana", "dataset": "sitecontrol", "ds": "us", "has_petblock": null, "has_sitecontrol": true, "sitecontrol": true, "host": "bitsoko-ghana.sitecontrol.us", "env": "production", "group_slug": "bitsoko-ghana", "channels": [], "faye_protocol": "https", "faye_host": "moss.makeloveland.com", "faye_port": 443, "session_id": "86badbe83152c7ec7d2d2aca17231e28", "ds_names": ["us", "2016", "2015", "otfr", "2014", "2013", "2012", "2011", "federal", "taxes15", "taxes13", "taxes12", "taxes11", "dfc", "assessment", "age", "sci", "demo", "hhf", "dlba", "zoning", "2014s", "landbank"], "ds_lookup": {"sitecontrol": "us", "monkey": "2016", "sheep": "2015", "occupied": "otfr", "horse": "2014", "snake": "2013", "dragonfly": "2012", "rabbit": "2011", "federal": "federal", "taxes15": "taxes15", "taxes13": "taxes13", "taxes12": "taxes12", "taxes11": "taxes11", "dfc": "dfc", "assessment": "assessment", "age": "age", "sci": "sci", "demo": "demo", "hhf": "hhf", "dlba": "dlba", "zoning": "zoning", "summer14": "2014s", "landbank": "landbank"}, "nearmap_ticket": null};
+        </script>
+<link href="./map1_files/application-6563532c21c792a61897d085c8cb3c77.css" media="all" rel="stylesheet" type="text/css">
+<script src="./map1_files/application-4df4ec0dec639693ad5f5313fafac0ab.js" type="text/javascript"></script>
+<style type="text/css"></style>
+<script src="./map1_files/components-97a9f4cb7997844911729e1d85f145eb.js" type="text/javascript"></script>
+<script src="./map1_files/faye.js" type="text/javascript"></script>
+<script src="./map1_files/sp_js.js" type="text/javascript"></script>
+<script>
+            window.intercomSettings = {"app_id": "iumjbczf", "host": "bitsoko-ghana.sitecontrol.us", "name": "Bitsoko Ghana", "email": "bitsokoghana@gmail.com", "created_at": 1446472511, "sc_name": "Bitsoko Ghana", "sc_plan": "Group", "sc_admin": "https://sitecontrol.us/admin#g=1368", "role": "admin", "num_maps": 5, "num_surveys": 1, "num_uploads": 0};
+            (function () {
+                var w = window;
+                var ic = w.Intercom;
+                if (typeof ic === "function") {
+                    ic('reattach_activator');
+                    ic('update', intercomSettings);
+                } else {
+                    var d = document;
+                    var i = function () {
+                        i.c(arguments)
+                    };
+                    i.q = [];
+                    i.c = function (args) {
+                        i.q.push(args)
+                    };
+                    w.Intercom = i;
+                    function l() {
+                        var s = d.createElement('script');
+                        s.type = 'text/javascript';
+                        s.async = true;
+                        s.src = 'https://widget.intercom.io/widget/iumjbczf';
+                        var x = d.getElementsByTagName('script')[0];
+                        x.parentNode.insertBefore(s, x);
+                    }
+                    if (w.attachEvent) {
+                        w.attachEvent('onload', l);
+                    } else {
+                        w.addEventListener('load', l, false);
+                    }
+                }
+            })()
+        </script>
+<meta property="twitter:card" content="summary_large_image" dynamic="1">
+<meta property="twitter:title" content="East Legon Use" dynamic="1">
+<style id="fit-vids-style">
+.fluid-width-video-wrapper {
+	width: 100%;
+	position: relative;
+	padding: 0;
+}
+.fluid-width-video-wrapper iframe, .fluid-width-video-wrapper object, .fluid-width-video-wrapper embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+<script type="text/javascript" src="./map1_files/63480.grid.json"></script><script type="text/javascript" src="./map1_files/63481.grid.json"></script><script type="text/javascript" src="./map1_files/63482.grid.json"></script></head>
+<body class="production sitecontrol with-waterfall with-level-1 with-level-2" style="zoom: 1;" data-pinterest-extension-installed="cr1.39.1">
+<div id="pjax-container">
+  <div class="sitecontrol" id="mapbox">
+    <div class="wrapper">
+      <div class="map leaflet-container leaflet-fade-anim" id="map" tabindex="0" style="position: relative;">
+        <div class="leaflet-map-pane" style="transform: translate3d(0px, -42px, 0px);">
+          <div class="leaflet-tile-pane">
+            helllo
+      </div>
+      <script>
+                        var map = null;
+                        var setupParaffinMap = function () {
+                            var m = null;
+                            var baseLayers = ["satellite", "street"];
+                            var layers = [{"id": "places", "name": "Boundaries", "ty": "geojson", "extent": null, "elements": {"type": "FeatureCollection", "features": []}, "url": null, "template": "<h4>{{headline}}</h4>", "style": {"color": "#F1A280", "fillColor": "#F1A280", "weight": 4, "opacity": 0.7, "fillOpacity": 0.6}, "style_handler": null, "key": null, "names": null, "interaction": true, "mouseover": true, "geometry_type": null, "zindex": null, "hide": null}, {"id": "outline", "name": "Outline", "ty": "geojson", "extent": null, "elements": {"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[-0.1787424087524414, 5.641055671215359], [-0.1620912551879883, 5.642849384059266], [-0.1597738265991211, 5.627730773705611], [-0.1768112182617187, 5.622563022902145], [-0.1787424087524414, 5.641055671215359]]]}, "properties": {"OGR_FID": 7023, "name": "East Legon", "slug": "east-legon", "user_id": 1, "id": 7023, "classes": "place neighborhood", "headline": "East Legon", "path": "/gh/neighborhoods/7023"}, "id": 7023}]}, "url": null, "template": null, "style": {"color": "#000000", "opacity": 1, "weight": 5, "fillColor": "none", "fillOpacity": 0}, "style_handler": null, "key": null, "names": null, "interaction": false, "mouseover": null, "geometry_type": null, "zindex": null, "hide": null}, {"id": "tiles", "name": "Ownership Info", "ty": "tilejson", "extent": null, "elements": null, "url": "https://a.tiles.mapbox.com/v3/loveland.vq1qyqfr.json", "template": "<b><a href='/aa/{{fid}}'>Unknown</a></b>", "style": null, "style_handler": null, "key": null, "names": null, "interaction": true, "mouseover": true, "geometry_type": null, "zindex": 3, "hide": null}];
+
+                            var opts = {
+                                divId: 'map',
+                                center: null,
+                                extent: [{"lon": -0.1787424087524414, "lat": 5.622563022902145}, {"lon": -0.1597738265991211, "lat": 5.642849384059266}],
+                                zoom: 10,
+                                minZoom: 3,
+                                maxZoom: 18,
+                                layerControl: false,
+                                cloudmadeKey: "194e5888480d4f9499b2f2099a793dbe",
+                                cloudmadeStyle: 998,
+                                geolocate: (typeof (gps_disabled) === 'undefined' || !gps_disabled) ? null : false,
+                                hash: true,
+                            };
+
+                            m = new Paraffin.Map(opts);
+                            m.initializeLayers(baseLayers, layers);
+
+                            m.map.on('layeradd', function (e) {
+                                $('.key_' + e.layer.paraffinId, $('#map').parent()).removeClass('hide').show();
+                            });
+                            m.map.on('layerremove', function (e) {
+                                $('.key_' + e.layer.paraffinId, $('#map').parent()).hide();
+                            });
+
+                            // For backwards compat, assign the global "map" to the last one created. Most pages only have one map so this is fine.
+                            // Other javascripts (app.js, sc.js) refer to the "map" var instead of allowing for multiple maps on a page
+                            map = m;
+                        };
+
+                        $(document).ready(setupParaffinMap);
+                    </script>
+      <div class="key"> <span> <span class="item">
+        <div class="square" style="background-color: #b30059;"></div>
+        <span class="lbl">use = residential</span> </span> <span class="item">
+        <div class="square" style="background-color: #5073e6;"></div>
+        <span class="lbl">use = commercial</span> </span> <span class="item">
+        <div class="square" style="background-color: #e6e620;"></div>
+        <span class="lbl">use = mixed</span> </span> <span class="item">
+        <div class="square" style="background-color: #5c00b3;"></div>
+        <span class="lbl">use = industrial</span> </span> <span class="item">
+        <div class="square" style="background-color: #2db802;"></div>
+        <span class="lbl">use = institutional</span> </span> <span class="item">
+        <div class="square" style="background-color: #0074b3;"></div>
+        <span class="lbl">use = unknown</span> </span> <span class="item">
+        <div class="square" style="background-color: #e66c15;"></div>
+        <span class="lbl">use = vacant</span> </span> <span class="item">
+        <div class="square" style="background-color: #e3e6e1;"></div>
+        <span class="lbl">use = parking</span> </span> <span class="item">
+        <div class="square" style="background-color: #b300a7;"></div>
+        <span class="lbl">use = park</span> </span> </span> </div>
+    </div>
+    <div class="loading-parcels nope"> <i class="fa fa-spinner fa-spin"></i> Loading the parcels... </div>
+  <div class="leaflet-map-pane" style="transform: translate3d(0px, -22px, 0px);"><div class="leaflet-tile-pane"><div class="leaflet-layer" style="z-index: 0;"><div class="leaflet-tile-container leaflet-zoom-animated"></div><div class="leaflet-tile-container leaflet-zoom-animated"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740.png" style="height: 256px; width: 256px; left: 371px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(1).png" style="height: 256px; width: 256px; left: 627px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741.png" style="height: 256px; width: 256px; left: 371px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(1).png" style="height: 256px; width: 256px; left: 627px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(2).png" style="height: 256px; width: 256px; left: 883px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742.png" style="height: 256px; width: 256px; left: 627px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739.png" style="height: 256px; width: 256px; left: 627px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(1).png" style="height: 256px; width: 256px; left: 371px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(1).png" style="height: 256px; width: 256px; left: 371px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(2).png" style="height: 256px; width: 256px; left: 115px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(3).png" style="height: 256px; width: 256px; left: 115px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(3).png" style="height: 256px; width: 256px; left: 883px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(2).png" style="height: 256px; width: 256px; left: 115px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(3).png" style="height: 256px; width: 256px; left: 883px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(2).png" style="height: 256px; width: 256px; left: 883px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(3).png" style="height: 256px; width: 256px; left: 115px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(4).png" style="height: 256px; width: 256px; left: 1139px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(4).png" style="height: 256px; width: 256px; left: 1139px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(5).png" style="height: 256px; width: 256px; left: -141px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(5).png" style="height: 256px; width: 256px; left: -141px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(4).png" style="height: 256px; width: 256px; left: 1139px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(4).png" style="height: 256px; width: 256px; left: -141px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(5).png" style="height: 256px; width: 256px; left: -141px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(5).png" style="height: 256px; width: 256px; left: 1139px; top: 604px;"></div></div><div class="leaflet-layer" style="z-index: 3;"><div class="leaflet-tile-container leaflet-zoom-animated"></div><div class="leaflet-tile-container leaflet-zoom-animated"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(6).png" style="height: 256px; width: 256px; left: 371px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(6).png" style="height: 256px; width: 256px; left: 371px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(7).png" style="height: 256px; width: 256px; left: 627px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(7).png" style="height: 256px; width: 256px; left: 627px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(6).png" style="height: 256px; width: 256px; left: 371px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(6).png" style="height: 256px; width: 256px; left: 627px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(8).png" style="height: 256px; width: 256px; left: 883px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(8).png" style="height: 256px; width: 256px; left: 883px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(7).png" style="height: 256px; width: 256px; left: 627px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(7).png" style="height: 256px; width: 256px; left: 371px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(8).png" style="height: 256px; width: 256px; left: 883px; top: -164px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31742(8).png" style="height: 256px; width: 256px; left: 883px; top: 604px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31740(9).png" style="height: 256px; width: 256px; left: 1139px; top: 92px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31741(9).png" style="height: 256px; width: 256px; left: 1139px; top: 348px;"><img class="leaflet-tile leaflet-tile-loaded" src="./map1_files/31739(9).png" style="height: 256px; width: 256px; left: 1139px; top: -164px;"><img class="leaflet-tile" src="./map1_files/missing_tile.png" style="height: 256px; width: 256px; left: 1139px; top: 604px;"></div></div></div><div class="leaflet-objects-pane"><div class="leaflet-shadow-pane"></div><div class="leaflet-overlay-pane"><svg class="leaflet-zoom-animated" width="2000" height="917" viewBox="-361 -144 2000 917" style="transform: translate3d(-361px, -144px, 0px);"><g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#000000" stroke-opacity="1" stroke-width="5" fill="none" fill-opacity="0" class="null place neighborhood leaflet-clickable place neighborhood" d="M575.3625866050809 773L489 -58L1265 -142L1373 566L693.8347107438017 773z" style="display: none;"></path></g></svg></div><div class="leaflet-marker-pane"></div><div class="leaflet-popup-pane"></div></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="file:///Volumes/Macintosh%20HDD/Users/NiiNortey/Documents/projects/benben/user/map/map2.htm#" title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="file:///Volumes/Macintosh%20HDD/Users/NiiNortey/Documents/projects/benben/user/map/map2.htm#" title="Zoom out">-</a></div></div><div class="leaflet-top leaflet-right"><div class="info hide leaflet-control"></div></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox © OpenStreetMap</a><span class="improve"> | <a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></span></div></div></div></div>
+</div>
+<script>
+            var setupSC = function () {
+                var opts = $.extend({"mapSlug": "east-legon-use", "mapPath": "/m/east-legon-use", "mapId": 2251, "outlinePath": "/gh/neighborhoods/7023", "regionVersion": 37, "defaultStyle": "", "permissions": {"post": true, "qc": false, "qc_photos": true}, "styleHandler": "function(feature) {\n        var c = null, rules = [{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"residential\",\"fill\":\"#b30059\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"commercial\",\"fill\":\"#5073e6\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"mixed\",\"fill\":\"#e6e620\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"industrial\",\"fill\":\"#5c00b3\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"institutional\",\"fill\":\"#2db802\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"unknown\",\"fill\":\"#0074b3\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"vacant\",\"fill\":\"#e66c15\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"parking\",\"fill\":\"#e3e6e1\"},{\"field\":\"use\",\"predicate\":\"is\",\"value\":\"park\",\"fill\":\"#b300a7\"},{\"predicate\":\"default\",\"fill\":\"#1185de\"}], props = feature.properties;\n        for(var i in rules) {\n          var rule = rules[i], match = false;\n          if(rule.field == 'tags') {\n            match = (rule.predicate == 'contains' && (props.tags || []).indexOf(rule.value) > -1);\n          } else if(rule.predicate == 'is') {\n            match = (props.fields && props.fields[rule.field] && props.fields[rule.field] == rule.value);\n          } else if(rule.predicate == 'is not') {\n            match = (props.fields && props.fields[rule.field] && props.fields[rule.field] != rule.value);\n          } else if(rule.predicate == 'default') {\n            match = true;\n          }\n          if(match) { c = rule.fill; break; }\n        }\n        if(!c) { c = \"#1185de\"; }\n        return { color: c, fillColor: c };\n      }", "surveyable": true, "legend": {"#b30059": "use = residential", "#5073e6": "use = commercial", "#e6e620": "use = mixed", "#5c00b3": "use = industrial", "#2db802": "use = institutional", "#0074b3": "use = unknown", "#e66c15": "use = vacant", "#e3e6e1": "use = parking", "#b300a7": "use = park"}, "embedded": false},
+                {
+                    paraffin: map,
+                    leaflet: map.map
+                });
+                LL.SCMapp.attachTo('#pjax-container', opts);
+                $('#pjax-container').trigger('hashchange');
+            };
+
+            $(document).ready(function () {
+                setupSC();
+            });
+
+            $(document).on('pjax:popstate:end', function (e, o) {
+                if ($('#mapbox.sitecontrol').exists()) {
+                    debug("maps#show sees pjax:popstate:end");
+                    if (!map) {
+                        setupParaffinMap(); // ordinarily this is taken care of by document.ready in _map.html, but not fired in popstate. so!
+                    }
+                    setupSC();
+                }
+            });
+        </script>
+<div hidden="1" id="pjax-metadata">
+  <meta content="East Legon Use - Site Control: Site Control" name="title">
+  <meta content="parcels properties detroit city tax foreclosure advocates blight surveys vacancy blexting blext real land use estate mobile motor city mapping open data database" name="keywords">
+  <meta content="LOVELAND is dedicated to putting America online parcel by parcel. We work with governments, developers, neighborhood groups, and passionate individuals to gather and present information about property in clear, actionable ways. In Detroit our community missions include arming people with information to battle a plague of tax foreclosures and running an ongoing survey of property conditions to help fight blight." name="description">
+  <meta content="2901636,620415163" property="fb:admins">
+  <meta content="East Legon Use" property="og:title">
+  <meta content="https://bitsoko-ghana.sitecontrol.us/m/east-legon-use" property="og:url">
+  <meta content="Site Control" property="og:site_name">
+  <meta content="website" property="og:type">
+  <meta content="Ghana&#39;s Leading Parcel Mapping Service" property="og:description">
+  <meta content="https://bitsoko-ghana.sitecontrol.us/assets/illustration/header.jpg" property="og:image">
+  <meta content="@makeloveland" property="twitter:creator">
+  <meta content="https://bitsoko-ghana.sitecontrol.us/m/east-legon-use" property="twitter:url">
+  <meta content="Ghana&#39;s Leading Parcel Mapping Service" property="twitter:description">
+  <meta content="https://bitsoko-ghana.sitecontrol.us/assets/illustration/header.jpg" property="twitter:image">
+  <meta content="East Legon Use" property="map.name">
+  <meta content="east-legon-use" property="map.slug">
+  <meta property="map.auction">
+  <meta content="Bitsoko Ghana" property="group.name">
+  <meta content="bitsoko-ghana" property="group.slug">
+  <meta property="map.surveyable">
+  <meta content="summary_large_image" property="twitter:card">
+  <meta content="East Legon Use" property="twitter:title">
+  <meta content="/sitecontrol/view-map/overview" property="path">
+  <meta content="authenticity_token" name="csrf-param">
+  <meta content="O1ayCYxWF7a1g+c6xaH4eTl792vXjtcjk5KsEy46RKk=" name="csrf-token">
+</div>
+</div>
+
+</div>
+
+
+
+<noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=577436002379856&amp;amp;ev=NoScript" /&gt;</noscript></body></html>
