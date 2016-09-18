@@ -47,7 +47,6 @@ $(document).ready(function() {
     $('#paymentTable').DataTable();
 	
 	$('.btn').click(function(e) {
-		alert('hello');
 		e.preventDefault();
 		window.location.href = $(this).attr('href');
 	});

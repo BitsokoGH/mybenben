@@ -20,7 +20,9 @@ Route::get('/home', 'HomeController@index');
 Route::get('/search', function () { return view('properties.search'); });
 Route::get('/overview', function () { return view('properties.overview'); });
 Route::get('/parcels', function () { return view('properties.parcels'); });
-//Route::get('/overview', function () { return view('properties.overview'); });
+Route::get('/occupancy', function () { return view('properties.occupancy'); });
+Route::get('/structured', function () { return view('properties.structured'); });
+Route::get('/blank', function () { return view('properties.blank'); });
 Route::post('/search', 'PropertyController@search');
 Route::get('/search/{id}', 'PropertyController@show');
 
@@ -31,6 +33,6 @@ Route::post('addDoc', 'DocumentController@store');
 
 Route::get('/payment', 'Payment_transactionController@index');
 
-Route::get('mydocs', 'DocumentController@index');
+Route::get('mydocs', 'PropertyController@index');
 Route::get('todo', 'DocumentController@pending');
 Route::get('docreview/{id}', 'DocumentController@show');

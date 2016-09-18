@@ -5,35 +5,14 @@
  @section('content')
   <div class="row">
     <div class="col-md-4 serachBox">
-    <div class="searchTitle">Search for a property </div>
-
-                <div class="btn-toolbar nomobile"  style="margin-bottom: 0.5em; margin-top: 0.5em;">
-                    <div class="btn-grooop"  style="margin-left: 0; margin: 0 auto;">
-                        <a class="btn btn-primary btn-lg active"   href="{{url('/overview')}}">
-                            <i class="glyphicon glyphicon-eye-open"></i>
-                            &nbsp;
-                            Overview
-                        </a>&nbsp;&nbsp;
-                        <a class="btn btn-primary btn-lg"   href="{{url('/parcels')}}">
-                            <i class="glyphicon glyphicon-filter"></i>
-                            &nbsp;&nbsp;
-                            Explore
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-primary btn-lg"   href="{{url('/search')}}">
-                            <i class="glyphicon glyphicon-search"></i>
-                            &nbsp;
-                            Search
-                        </a>
-                    </div>
-                </div>
+    <div class="searchTitle">Query Property Information</div>
                    
     <div class="col-md-10">
     <form action="{{url('/search')}}" method="post">
     <div class="form-group">
         <label for="mapTypes">&nbsp;</label>
         <input type="search" class="form-control " name="search_param" id="searchMap" placeholder="Parcel No.">
-    </div>      
+    </div>   
     <button type="submit" class="btn btn-primary pull-right">Search</button>
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	</form>
@@ -49,97 +28,89 @@
 
 @section('custom_js')
 <script src="{{url('../assets/js/leaflet/leaflet.js')}}" type="text/javascript"></script> 
-<script src="{{url('../assets/js/eastlegon.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/js/eastlegon-blank.js')}}" type="text/javascript"></script>
 
 <script>
 
-//Map
+            //Map
+            var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibi1xdWJlIiwiYSI6ImNpbzJya2p3czAwem53ZGx5YmZxZjkxcXMifQ.7U8BvCm75GU1Q4orDPTYwA', {id: 'mapbox.light', attribution: 'Map &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> , ' +
+                        'Imagery © <a href="http://mapbox.com">Mapbox</a>'}),
+                satellite = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibi1xdWJlIiwiYSI6ImNpbzJya2p3czAwem53ZGx5YmZxZjkxcXMifQ.7U8BvCm75GU1Q4orDPTYwA', {id: 'mapbox.satellite', attribution: 'Map &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> , ' +
+                        'Imagery © <a href="http://mapbox.com">Mapbox</a>'}),
+                streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibi1xdWJlIiwiYSI6ImNpbzJya2p3czAwem53ZGx5YmZxZjkxcXMifQ.7U8BvCm75GU1Q4orDPTYwA', {id: 'mapbox.streets', attribution: 'Map &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> , ' +
+                        'Imagery © <a href="http://mapbox.com">Mapbox</a>'});
+
+            var map = L.map('mapHolder', {
+                center: [5.629265210427313, -0.165195452969745],
+                zoom: 15,
+                layers: [streets]
+            });
+
+            var baseMaps = {
+                "Grayscale": grayscale,
+                "Streets": streets,
+                "Satellite": satellite
+            };
+            
+            L.control.layers(baseMaps).addTo(map);
 
 
-var map = L.map('mapHolder').setView([5.629265210427313, -0.165195452969745,], 15);
+            // control that shows Parcel info on hover
+            var info = L.control();
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-  
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    id: 'mapbox.light'
-}).addTo(map);
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
 
+            info.update = function (props) {
+                this._div.innerHTML = '<h5>BenBen Land Parcel Data</h5>' + (props ?
+                        '<b>' + props.address + '</b><br />' + 'Usage: ' + props.use + '<br />' + 'Occupancy: ' + props.occupancy + '<br />' + 'Structure: ' + props.structure :
+                        'Hover over a parcel');
+            };
 
-
-
-// control that shows Parcel info on hover
-var info = L.control();
-
-info.onAdd = function(map) {
-    this._div = L.DomUtil.create('div', 'info');
-    this.update();
-    return this._div;
-};
-
-info.update = function(props) {
-    this._div.innerHTML = '<h5>BenBen Land Parcel Data</h5>' + (props ?
-        '<b>' + props.address + '</b><br />' + 'Usage: ' + props.use + '<br />' + 'Occupancy: ' + props.occupancy + '<br />' + 'Structure: ' + props.structure:
-        'Hover over a parcel');
-};
-
-info.addTo(map);
+            info.addTo(map);
 
 
 
 
 
-// get color depending on population density value
-function getColor(d) {
-	
-	if(d == "residential" ){
-		return "#b30059";exit;	
-	}
-		if(d == "commercial" ){
-		return "#5073e6";exit;	
-	}
-		if(d == "mixed" ){
-		return "#e6e620";exit;	
-	}
-		if(d == "industrial" ){
-		return "#5c00b3";exit;	
-	}
-		if(d == "institutional" ){
-		return "#2db802";exit;	
-	}
-	if(d == "other" ){
-		return "#0074b3";exit;	
-	}
-	if(d == "unknown" ){
-		return "gold";exit;	
-	}
-	if(d == "vacant" ){
-		return "#e66c15'";exit;	
-	}
-	if(d == "parking" ){
-		return "#e3e6e1";exit;	
-	}
-	if(d == "park" ){
-		return "red";exit;	
-	}
-		   
-		   
-	   
-}
+            // get color depending on population density value
+            function getColor(d) {
 
-function style(feature) {
-    return {
-        fillColor: getColor(feature.properties.use),
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '',
-        fillOpacity: 0.7
-    };
-}
+                if (d === "null") {
+                    return "#b30059";
+                    exit;
+                }
+                if (d === "unoccupied") {
+                    return "#5073e6";
+                    exit;
+                }
+                if (d === "maybe") {
+                    return "#e6e620";
+                    exit;
+                }
+                if (d === "partial") {
+                    return "#5c00b3";
+                    exit;
+                }
 
-L.geoJson(parcelData, {style: style}).addTo(map);
+
+            }
+
+            function style(feature) {
+                return {
+                    fillColor: getColor(feature.properties.original),
+                    weight: 2,
+                    opacity: 1,
+                    color: '#666',
+                    dashArray: '',
+                    fillOpacity: 0
+                };
+            }
+
+            L.geoJson(parcelData, {style: style}).addTo(map);
 
 
 
@@ -147,72 +118,128 @@ L.geoJson(parcelData, {style: style}).addTo(map);
 
 
 
-function highlightFeature(e) {
-    var layer = e.target;
+            function highlightFeature(e) {
+                var layer = e.target;
 
-    layer.setStyle({
-        weight: 1,
-        color: '#666',
-        dashArray: '',
-        fillOpacity: 0.7
-    });
+                layer.setStyle({
+                    weight: 1,
+                    color: '#666666',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
 
-    if (!L.Browser.ie && !L.Browser.opera) {
-        layer.bringToFront();
-    }
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
 
-    info.update(layer.feature.properties);
-}
+                info.update(layer.feature.properties);
+            }
 
-var geojson;
+            var geojson;
 
-function resetHighlight(e) {
-    geojson.resetStyle(e.target);
-	
-    info.update();
-}
+            function resetHighlight(e) {
+                geojson.resetStyle(e.target);
 
-function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
-}
+                info.update();
+            }
 
-function onEachFeature(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: zoomToFeature
-    });
-}
+            function zoomToFeature(e) {
+                map.fitBounds(e.target.getBounds());
+            }
 
-geojson = L.geoJson(parcelData, {
-    style: style,
-    onEachFeature: onEachFeature
-}).addTo(map);
+            function onEachFeature(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight,
+                    click: zoomToFeature
+                });
+            }
 
-map.attributionControl.addAttribution('Map Data &copy; <a href="http://www.ghanalap.gov.gh/index.php/">Ghana Lands Commission</a>');
+            geojson = L.geoJson(parcelData, {
+                style: style,
+                onEachFeature: onEachFeature
+            }).addTo(map);
 
-
-var legend = L.control({
-    position: 'bottomright'
-});
-
-legend.onAdd = function(map) {
-	
-
-    var div = L.DomUtil.create('div', 'info legend'),
-	grades = ["#b30059", "#5073e6", "0074b3", "#2db802", "#5c00b3", "gold", "#e3e6e1", "red"]
+            map.attributionControl.addAttribution('Map Data &copy; <a href="http://www.ghanalap.gov.gh/index.php/">Ghana Lands Commission</a>');
 
 
-    for (var i = 0; i < grades.length; i++) {
-        from = grades[i];
+            var legend = L.control({position: 'bottomright'});
+            legend.onAdd = function (map) {
 
-        labels.push('<i style="background:' + getColor(from + 1) + '"></i>');
-    }
+                var div = L.DomUtil.create('div', 'info legend'),
+                        grades = ["occupied", "unoccupied", "maybe", "partial"],
+                        mycolors = ["#b30059", "#5073e6", "#e6e620", "#5c00b3"],
+                        labels = ['<strong> Legend </strong>'],
+                        from, to;
 
-    div.innerHTML = labels.join('<br>');
-    return div;
-};
 
-//legend.addTo(map);
-</script>
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades [i];
+                    //to = grades[i+1]-1;
+
+                    labels.push(
+                            '<i style="background:' + mycolors [i] + '"></i> ' +
+                            from);
+                }
+                div.innerHTML = labels.join('<br>');
+                return div;
+
+
+            };
+
+
+
+
+
+
+            //Tabs Settings
+
+            $('#mapTabs a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+
+            });
+
+            // Photo Gallery 
+            Galleria.loadTheme('../assets/js/galleria/themes/classic/galleria.classic.min.js');
+            Galleria.run('.galleria');
+            Galleria.configure('slide', 'height');
+
+            //Details
+
+            $("#detailItemsBtn").click(function () {
+                $("#detailsPay").hide();
+                $("#paymentInfo").show();
+
+                event.preventDefault();
+            });
+
+            $("#paymentInfoBtn").click(function () {
+                $("#paymentInfo").hide();
+                $("#detailsInfo").show();
+
+                event.preventDefault();
+            });
+
+            $("#backdetailItemsBtn").click(function () {
+                $("#paymentInfo").hide();
+                $("#detailsPay").show();
+
+                event.preventDefault();
+            });
+
+
+            //Payment Options
+
+            var paymentOptions = jQuery('#paymentOptions');
+            var select = this.value;
+            paymentOptions.change(function () {
+                if ($(this).val() === 'bankAcc') {
+                    $('#pinBox').show();
+                } else
+                    $('#pinBox').hide(); // hide div if value is not "bank account"
+            });
+
+
+        </script>
 @stop

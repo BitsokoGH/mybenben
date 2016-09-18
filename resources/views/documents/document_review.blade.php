@@ -15,7 +15,7 @@
     <div class="panel-body">
     <!-- 16:9 aspect ratio -->
 <div class="embed-responsive embed-responsive-16by9">
-<object  class="embed-responsive-item" width="100%" height="400" data="http://bitsoko.com.gh/mybenben/assets/docs/{{$doc->doc_url}}"></object>
+<object  class="embed-responsive-item" width="100%" height="400" data="{{url('../assets/docs/Customer_Details_Update_Form.pdf')}}"></object>
   
 </div>
     

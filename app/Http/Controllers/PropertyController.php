@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Redirector;
 use App\Properties;
+
 use Input;
 use Validator;
 use Redirect;
@@ -25,7 +26,9 @@ class PropertyController extends Controller
     public function index()
     {
         //
-		return view('properties.search');
+        $user_id = Auth::user()->id;
+        $properties = Properties::all();//where('user_id','$user_id');
+        return view('properties.myproperties',compact('properties'));
     }
 
     /**
